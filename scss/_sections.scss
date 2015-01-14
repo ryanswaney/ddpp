@@ -1,0 +1,219 @@
+.container {
+  @include grid-row();
+}
+
+.about,
+.feature,
+.footer,
+.posts,
+.newsletter {
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  position: relative; }
+
+.about,
+.feature,
+.posts,
+.newsletter {
+
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    //border-color: #fff; // background
+    border-top-color: #6d6e72; // arrow color
+    border-width: 20px;
+    margin-left: -20px;
+    z-index: 98;
+  }
+
+}
+
+
+.about
+  {
+  color: #fff;
+  font-weight: 300;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: padding .15s ease 0;
+    padding: .333rem;
+    border: 2px solid #fff;
+    display: inline-block;
+
+    &:focus,
+    &:hover {
+      border-color: lighten(#0071ba, 20%);
+      padding: .333rem .6rem;
+    }
+  }
+}
+
+.about {
+  background-color: #0071ba;
+  background-image: url("../images/partner_map.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+
+  @media #{$medium-up} {
+    background-position: center center;
+    background-size: 95%;
+  }
+
+  &:after {
+    border-top-color: #0071ba; } // arrow color
+}
+
+.feature {
+  //background-color: #6d6e72;
+  background-color: #706f73;
+  background-image: url("../images/ddpp_paths_1c_w.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 25% 50%;
+
+  padding-top: 4rem;
+
+  &:after {
+    border-top-color: #6d6e72; } // arrow color
+}
+
+.footer { 
+  background: #6d6e72;
+
+  h2,
+  p,
+  li { 
+    color: #fff;
+    font-weight: 300; }
+
+}
+
+.posts {
+  background: #fff;
+
+  &:after {
+    border-top-color: #fff; } // arrow color
+}
+.post-block {
+  @include grid-column(12);
+
+  @media #{$large-up} {
+    @include grid-column(4);
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 0
+  }
+}
+.post-block-title {
+  color: #0071ba;
+  font-size: 1.333rem;
+}
+.post-block-archlnk {
+  border-top: 1px solid #0071ba;
+  color: #0071ba;
+  display: block;
+  font-size: 70%;
+  font-weight: 300;
+  margin-top: 1rem;
+  padding-top: .333rem;
+  transition: border .2s, color .2s;
+
+  &:hover,
+  &:focus {
+    color: #9bb72e;
+    border-top: 1px solid #9bb72e;
+  }
+}
+
+.post-date {
+  font-size: 60%;
+}
+.post-title {
+  font-size: 90%;
+
+  a {
+
+    color: #0071ba;
+
+    display: block;
+    transition: padding .2s, border .2s, color .2s;
+
+    &:hover,
+    &:focus {
+      color: #9bb72e;
+      border-left: 2px solid #9bb72e;
+      padding-left: .20rem;
+    }
+  }
+}
+
+.newsletter {
+  background: #9bb72e;
+
+  &:after {
+    border-top-color: #9bb72e; } // arrow color
+
+  h2 {
+    color: darken(#9bb72e, 20%);
+  }
+}
+
+
+.about-blocks {
+  @include block-grid(1);
+
+  li > * { 
+    color: #fff;
+    font-weight: 300; }
+
+  @media #{$medium-up} {
+    @include block-grid(2);
+  }
+}
+
+.contact-info {
+  @include grid-column(
+    $columns: 12
+  );
+
+  @media #{$medium-up} {
+    @include grid-column(
+      $columns: 8,
+      $center:true
+    );
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: border .15s ease 0;
+    padding-bottom: .15rem;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+
+    &:focus,
+    &:hover {
+      border-color: lighten(#0071ba, 20%);
+    }
+  }
+}
+.partner-info {
+    @include block-grid(2);
+    margin-top: 2rem;
+
+    a {
+      border: none;
+      img { width: 80%; }
+    }
+
+  }
